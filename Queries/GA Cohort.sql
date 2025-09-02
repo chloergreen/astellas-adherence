@@ -106,5 +106,4 @@ AND p.date_unenrolled IS NULL
 AND (dx1.code IN ('H35.3113', 'H35.3114', 'H35.3123', 'H35.3124', 'H35.3133', 'H35.3134')
     OR dx2.code IN ('H35.3113', 'H35.3114', 'H35.3123', 'H35.3124', 'H35.3133', 'H35.3134')
     OR dx3.code IN ('H35.3113', 'H35.3114', 'H35.3123', 'H35.3124', 'H35.3133', 'H35.3134'))
-AND c.name IS NOT NULL
 ORDER BY p.id ASC
