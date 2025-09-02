@@ -76,10 +76,11 @@ CASE
         THEN 'low vision/ ADLs'
     WHEN LOWER(c.name) LIKE '%caregiver%' OR LOWER(c.name) LIKE '%caregiver strain%'
         THEN 'caregiver'
-    WHEN LOWER(c.name) LIKE '%food%' OR LOWER(c.name) LIKE '%lack of healthy foods%' OR LOWER(c.name) LIKE '%literacy%' OR LOWER(c.name) LIKE '%PPE%'
+    WHEN LOWER(c.name) LIKE '%food%' OR LOWER(c.name) LIKE '%lack of healthy foods%' OR LOWER(c.name) LIKE '%literacy%' OR LOWER(c.name) LIKE '%lack of access to ppe%'
         THEN 'lifestyle'
     WHEN LOWER(c.name) LIKE '%provider%' OR LOWER(c.name) LIKE '%staff%'
         THEN 'trust in provider'
+    WHEN LOWER(c.name) LIKE '%mvt non-adherence%' THEN 'mVT'
     ELSE 'other'
 END AS category,
 CASE 
