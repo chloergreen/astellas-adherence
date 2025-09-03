@@ -14,10 +14,10 @@ SELECT
 FROM sf_lumata_encounter
 GROUP BY patient_person_account__c
 ),
+
 -- no distinct because a patient could have the same barrier on multiple different encounters
 base_query AS
-(
-SELECT 
+(SELECT 
     p.id "id_pt",
     p.pe_name,
     p.pr_name,
@@ -110,9 +110,7 @@ AND p.date_unenrolled IS NULL
 AND (dx1.code IN ('H35.3113', 'H35.3114', 'H35.3123', 'H35.3124', 'H35.3133', 'H35.3134')
     OR dx2.code IN ('H35.3113', 'H35.3114', 'H35.3123', 'H35.3124', 'H35.3133', 'H35.3134')
     OR dx3.code IN ('H35.3113', 'H35.3114', 'H35.3123', 'H35.3124', 'H35.3133', 'H35.3134'))
-AND tf_izervay_in_text = TRUE
-ORDER BY p.id ASC
-),
+ORDER BY p.id ASC),
 barrier_count as
 (
 SELECT
@@ -129,3 +127,4 @@ CASE WHEN barrier_count = 1 THEN 1
 ELSE null 
 end barrier_bin
 from barrier_count
+
