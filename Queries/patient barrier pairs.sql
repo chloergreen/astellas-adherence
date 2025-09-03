@@ -1,4 +1,4 @@
--- First, your existing query as a CTE to get the base patient/barrier data
+
 WITH pts_iz AS
 (
 SELECT
